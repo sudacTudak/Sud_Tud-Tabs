@@ -1,0 +1,128 @@
+$height: 46px;
+$heightSearch: 48px;
+
+.select {
+	width: 100%;
+	position: relative;
+	z-index: 100;
+
+	.select__arrow {
+		width: 20px;
+		position: absolute;
+		top: calc($height / 2 + 1) + 'px';
+		right: 10px;
+
+		&:before, &:after {
+			content: '';
+			position: absolute;
+			top: 0px;
+			height: 2px;
+			width: 10px;
+			background-color: #000;
+		}
+	
+		&:before {
+			right: 7.5px;
+			transform: rotate(40deg);
+		}
+	
+		&:after {
+			right: 0px;
+			transform: rotate(-40deg);
+		}
+	}
+
+	&.is-open {
+		.select__input {
+			border-bottom: none;
+			border-bottom-left-radius: 0px;
+			border-bottom-right-radius: 0px;
+		}
+		.select__dropdown {
+			display: block;
+		}
+
+		.select__arrow {
+			&:before {
+				transform: rotate(-40deg);
+			}
+		
+			&:after {
+				transform: rotate(40deg);
+			}
+		}
+
+		.select__backdrop {
+			display: block;
+		}
+	}
+
+	&__input {
+		border: 1px solid #ccc;
+		height: $height;
+		display: flex;
+		align-items: center;
+		padding: 0 1rem;
+		cursor:pointer;
+		justify-content: space-between;
+		background-color: #fff;
+	}
+
+	&__dropdown {
+		position: absolute;
+		border: 1px solid #ccc;
+		top: $height;
+		left: 0;
+		right: 0;
+		box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+		display: none;
+		background-color: #fff;
+	}
+
+	&__search {
+		width: 100%;
+		padding: 0.8rem;
+		border: none;
+		border-bottom: 1px solid #ccc;
+
+		&:focus {
+			box-shadow: inset 1px -1px 3px 2px rgba(0, 0, 0, 0.5);
+		}
+	}
+
+	&__list {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
+	&__item {
+		padding: 1rem;
+		border-bottom: 1px solid #ccc;
+		cursor:pointer;
+
+		&.selected {
+			background-color: bisque;
+		}
+
+		&.hide {
+			display: none;
+		}
+
+		&:hover{
+			background-color: #eee;
+			transition: 0.15s background-color ease-in;
+		}
+	}
+
+	.select__backdrop {
+		position: fixed;
+		z-index: -1;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		left: 0;
+		display: none;
+		background-color: transparent;
+	}
+}

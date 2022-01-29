@@ -1,0 +1,42 @@
+.tabs {
+
+    &__nav {
+        margin-bottom: 20px;
+    }
+
+    &__content {
+
+    }
+
+    &__panel {
+        display: none;
+
+        &--active {
+            display: block;
+        }
+    }
+}
+
+.nav-tabs {
+    display: flex;
+    &__item {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    &__btn {
+        padding: 10px 0;
+        border: 1px #000 solid;
+        min-width: 100px;
+        &--active {
+            background-color: navy;
+            color: #fff;
+        }
+        &:focus,&:hover {
+            background-color: wheat;
+        }
+    }
+}

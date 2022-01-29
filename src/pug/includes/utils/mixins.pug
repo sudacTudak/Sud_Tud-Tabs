@@ -1,0 +1,16 @@
+mixin menuLink(href='#', text)
+	li
+		a(href=href class!= attributes.class)= text
+
+mixin headerMenu(classes, linksObj)
+	.menu-header(class=classes)
+		button.menu-header__icon.icon-menu
+			span
+		nav.menu-header__body
+			ul.menu-header__list
+				each href, text in linksObj
+					+menuLink(href, text)(class='menu-header__link')
+
+
+mixin img(path, desc="")
+	img(src=require(`@img/${path}`) alt= desc class!= attributes.class)

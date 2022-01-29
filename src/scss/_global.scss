@@ -1,0 +1,44 @@
+//<ОБНУЛЯЮЩИЙ СТИЛЬ>
+@use 'nullstyle';
+//</ОБНУЛЯЮЩИЙ СТИЛЬ>
+
+//<ПОДКЛЮЧЕНИЕ СТИЛЕЙ-ШАБЛОНОВ, UI>
+@use 'modules' as mods;
+//</ПОДКЛЮЧЕНИЕ СТИЛЕЙ-ШАБЛОНОВ, UI>
+
+//<ПОДКЛЮЧЕНИЕ МИКСИНОВ, ПЕРЕМЕННЫХ, ШРИФТОВ>
+@use 'utils' as uts;
+//</ПОДКЛЮЧЕНИЕ МИКСИНОВ, ПЕРЕМЕННЫХ, ШРИФТОВ>
+
+
+@use 'header';
+@use 'footer';
+
+
+
+
+//<ОБОЛОЧКА>
+.wrapper{width: 100%; min-height: 100%; overflow: hidden; display: flex; flex-direction: column;}
+.content{flex: 1 1 auto}
+//</ОБОЛОЧКА>
+
+
+
+//<ОСНОВНАЯ СЕТКА>
+.container{max-width: uts.$var-mw; margin: 0 auto; width: 100%;
+    @media (max-width: (uts.$var-md1 + px)){max-width: 970px;}
+    @media (max-width: (uts.$var-md2 + px)){max-width: 750px;}
+    @media (max-width: (uts.$var-md3 + px)){max-width: 476px;}
+    @media (max-width: (uts.$var-md4 + px)){max-width: none;padding:0 10px;}
+}
+
+//</ОСНОВНАЯ СЕТКА>
+
+
+body {
+    font-family: uts.$fontfamily;
+}
+
+.page {
+    margin-top: 30px;
+}

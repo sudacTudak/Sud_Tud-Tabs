@@ -1,0 +1,34 @@
+extends ../layout/main
+
+block append vars
+    - var siteTitle = 'Some Title';
+    - var pageClass = 'index-page';
+
+block content
+    main.page
+        .container
+            .tabs(data-tabs="tab")
+                ul.tabs__nav.nav-tabs
+                    li.nav-tabs__item
+                        button.nav-tabs__btn(type="button" data-tabs-category="first") Таб один
+                    li.nav-tabs__item
+                        button.nav-tabs__btn(type="button" data-tabs-category="second") Таб два
+                    li.nav-tabs__item
+                        button.nav-tabs__btn(type="button" data-tabs-category="third") Таб три
+                .tabs__content
+                    .tabs__panel Таб один
+                    .tabs__panel Таб два
+                    .tabs__panel Таб три
+            .tabs(data-tabs="tabs2")
+                ul.tabs__nav.nav-tabs
+                    li.nav-tabs__item
+                        button.nav-tabs__btn(type="button" data-tabs-category="first") Таб один
+                    li.nav-tabs__item
+                        button.nav-tabs__btn(type="button" data-tabs-category="second") Таб два
+                    li.nav-tabs__item
+                        button.nav-tabs__btn(type="button" data-tabs-category="third") Таб три
+                .tabs__content
+                    .tabs__panel Таб один
+                    .tabs__panel Таб два
+                    .tabs__panel Таб три
+

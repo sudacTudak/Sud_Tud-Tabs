@@ -1,0 +1,17 @@
+//<ШРИФТЫ>
+
+
+//Подключение шрифтов
+@font-face {
+	font-family: 'Roboto';
+	src: url("./../fonts/Roboto-Regular.ttf") format('truetype');
+}
+//</Подключение шрифтов>
+
+
+
+//<Шрифт по умолчанию>
+$fontfamily: "Roboto";
+//</Шрифт по умолчанию>
+
+//</ШРИФТЫ>

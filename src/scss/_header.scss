@@ -1,0 +1,80 @@
+//<ОБНУЛЯЮЩИЙ СТИЛЬ>
+@use 'nullstyle';
+//</ОБНУЛЯЮЩИЙ СТИЛЬ>
+
+//<ПОДКЛЮЧЕНИЕ СТИЛЕЙ-ШАБЛОНОВ, UI>
+@use 'modules' as mods;
+//</ПОДКЛЮЧЕНИЕ СТИЛЕЙ-ШАБЛОНОВ, UI>
+
+//<ПОДКЛЮЧЕНИЕ МИКСИНОВ, ПЕРЕМЕННЫХ, ШРИФТОВ>
+@use 'utils' as uts;
+//</ПОДКЛЮЧЕНИЕ МИКСИНОВ, ПЕРЕМЕННЫХ, ШРИФТОВ>
+
+
+header{}
+//===============================================
+.header {
+	background: url(../images/webpack-logo.png) center center / cover no-repeat;
+	&__container {
+		@include uts.mix-flexbox();
+		flex-direction: column;
+		@media(max-width: (uts.$var-md2 + px)) {
+			flex-direction: row;
+		}
+	}
+
+	&__logo {
+	}
+
+	&__menu {
+		margin-top: 20px;
+		@media(max-width: (uts.$var-md2 + px)) {
+			margin-top: 10px;
+		}
+	}
+}
+.container {
+}
+.menu-header {
+	
+	&__list {
+		@include uts.mix-flexbox();
+	}
+
+	&__link {
+		margin: 0 15px;
+		font-size: 20px;
+		color: #fff;
+
+		@media(max-width: (uts.$var-md2 + px)) {
+			margin: 0 10px;
+			font-size: 15px;
+			color: #000;
+		}
+	}
+}
+
+//===============================================
+
+/*
+	.header-menu__icon{
+		display: block;
+		position: absolute;
+		top: 18px;
+		right: 10px;
+		width:30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+		span{@include anim(0.3s,0s);top: 8px;left: 0px;position: absolute;width: 100%;height: 2px;background-color: #000;
+			&:first-child{top: 0px;}
+			&:last-child{top: auto;bottom: 0px;}
+		}
+		&.active{
+			span{@include scale(0);
+				&:first-child{@include rotate(-45deg);top: 8px;}
+				&:last-child{@include rotate(45deg);bottom: 8px;}
+			}
+		}
+	}
+*/
